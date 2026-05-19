@@ -1,0 +1,37 @@
+{
+    "name": "tenseg/cascading-entry-protection",
+    "autoload": {
+        "psr-4": {
+            "Tenseg\\CascadingEntryProtection\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Tenseg\\CascadingEntryProtection\\Tests\\": "tests"
+        }
+    },
+    "require": {
+        "statamic/cms": "^6.0"
+    },
+    "require-dev": {
+        "orchestra/testbench": "^10.8"
+    },
+    "config": {
+        "allow-plugins": {
+            "pixelfear/composer-dist-plugin": true
+        }
+    },
+    "extra": {
+        "statamic": {
+            "name": "Cascading Entry Protection",
+            "description": "Cascading Entry Protection addon"
+        },
+        "laravel": {
+            "providers": [
+                "Tenseg\\CascadingEntryProtection\\ServiceProvider"
+            ]
+        }
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
+}

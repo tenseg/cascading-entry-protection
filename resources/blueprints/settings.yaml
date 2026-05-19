@@ -1,0 +1,44 @@
+tabs:
+  main:
+    display: Main
+    sections:
+      -
+        fields:
+          -
+            handle: collections
+            field:
+              type: collections
+              mode: select
+              display: Collections
+              instructions: 'Choose the collections to which cascading protections will apply.'
+          -
+            handle: lifetime
+            field:
+              append: Days
+              min: 1
+              max: 365
+              step: 1
+              default: '30'
+              type: integer
+              display: 'Ticket Lifetime'
+              instructions: "Tickets will expire after this amount of time. Note that tickets are stored as cookies in the user's browser, so the user will need a new ticket whenever they use a new browser as well."
+          -
+            handle: tickets
+            field:
+              add_row: 'Add Ticket'
+              type: grid
+              display: 'Access Tickets'
+              instructions: 'Tickets control access to protected entries. You use the ticket names to select which tickets apply to an entry in the control panel. Then your website visitors will have to know one of the ticket passwords to get access to that entry.'
+              fields:
+                -
+                  handle: name
+                  field:
+                    type: text
+                    display: Name
+                    width: 33
+                -
+                  handle: watchwords
+                  field:
+                    type: list
+                    display: Passwords
+                    width: 66

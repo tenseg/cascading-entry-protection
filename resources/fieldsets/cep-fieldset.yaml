@@ -1,0 +1,15 @@
+title: 'Cascading Entry Protection'
+fields:
+  -
+    handle: cascading_protection_tickets
+    field:
+      dictionary: protection_tickets
+      type: dictionary
+      display: 'Access Tickets'
+  -
+    handle: cep_ancestor_tickets
+    field:
+      type: note
+      display: 'Inherited Protection'
+      visibility: computed
+      hide_display: true
