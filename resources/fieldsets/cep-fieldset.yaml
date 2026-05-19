@@ -6,6 +6,7 @@ fields:
       dictionary: protection_tickets
       type: dictionary
       display: 'Access Tickets'
+      if: showAccessTickets
   -
     handle: cep_ancestor_tickets
     field:
@@ -13,3 +14,4 @@ fields:
       display: 'Inherited Protection'
       visibility: computed
       hide_display: true
+      if: showCascadingNote
