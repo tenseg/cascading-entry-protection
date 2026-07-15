@@ -34,7 +34,7 @@ class ServiceProvider extends AddonServiceProvider
             // add our custom protect scheme configuration to the Statamic config
             $this->mergeConfigFrom(__DIR__.'/Config/protect.php', 'statamic.protect.schemes');
 
-            $this->app->bind(PasswordProtectController::Class, TensegController::Class);
+            $this->app->bind(PasswordProtectController::class, TensegController::class);
 
             // It seems that computed values cannot reliably refer to other computed values,
             // so we have to do the cascading in both values. We cascade the tickets into
@@ -57,6 +57,9 @@ class ServiceProvider extends AddonServiceProvider
                             return $parent->cascading_protection_tickets;
                         }
                         $parent = $parent->parent;
+                        if ( !$parent ) {
+                            $parent = $entry->collection()->mount();
+                        }
                     }
                     return null;
                 },
@@ -81,6 +84,9 @@ class ServiceProvider extends AddonServiceProvider
                             return $parent->title . " provides " . Str::makeSentenceList($tickets) .  ".";
                         }
                         $parent = $parent->parent;
+                        if ( !$parent ) {
+                            $parent = $entry->collection()->mount();
+                        }
                     }
                     return "Open access.";
                 },
@@ -104,6 +110,9 @@ class ServiceProvider extends AddonServiceProvider
                             return 'cascading_entry_protector';
                         }
                         $parent = $parent->parent;
+                        if ( !$parent ) {
+                            $parent = $entry->collection()->mount();
+                        }
                     }
                     return null;
                 },

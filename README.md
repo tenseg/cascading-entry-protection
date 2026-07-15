@@ -11,6 +11,7 @@ Cascading Entry Protection provides:
 - Any entry may assign any number of access tickets to provide protection;
 - Any child of an entry with access tickets assigned will enjoy the same protection automatically;
 - A fieldset is available to add required fields to a collection's blueprint.
+- If a collection is mounted on an entry, then the whole collection will be protected if the mount-point entry is protected. In other words, the mount-point page is treated as a "parent" of all the pages in the mounted collection.
 
 Using this addon does not prevent you using the other protection schemes provided by Statamic. If an entry is protected by a different Statamic protection scheme, that will take precedence over the Cascading Entry Protection scheme. But do note that the regular Statamic protection schemes do not cascade to child entries.
 
