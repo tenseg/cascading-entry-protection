@@ -1,5 +1,6 @@
 {
     "name": "tenseg/cascading-entry-protection",
+    "description": "A Statamic addon that allows you to restrict access to entry hierarchies.",
     "autoload": {
         "psr-4": {
             "Tenseg\\CascadingEntryProtection\\": "src"

@@ -43,3 +43,6 @@ But do keep in mind that these are all "shared passwords" that you will hand out
 
 Also note that any protected page will be effectively blocked from search engines and will not get indexed.
 
+## License
+
+The code unique to this addon is licensed by Tenseg LLC under the MIT License. Please see the [License File](https://github.com/tenseg/cascading-entry-protection/blob/main/LICENSE) for information. Statamic itself is commercial software and has [its own license](https://statamic.com/license).
