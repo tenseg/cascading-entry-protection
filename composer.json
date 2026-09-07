@@ -2,6 +2,14 @@
     "name": "tenseg/cascading-entry-protection",
     "description": "A Statamic addon that allows you to restrict access to entry hierarchies.",
     "license": "MIT",
+    "type": "statamic-addon",
+    "authors": [
+        {
+            "name": "Tenseg LLC",
+            "email": "dev@tenseg.net",
+            "homepage": "https://www.tenseg.net"
+        }
+    ],
     "autoload": {
         "psr-4": {
             "Tenseg\\CascadingEntryProtection\\": "src"
@@ -26,7 +34,7 @@
     "extra": {
         "statamic": {
             "name": "Cascading Entry Protection",
-            "description": "Cascading Entry Protection addon"
+            "description": "A Statamic addon that allows you to restrict access to entry hierarchies."
         },
         "laravel": {
             "providers": [
