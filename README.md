@@ -43,6 +43,10 @@ But do keep in mind that these are all "shared passwords" that you will hand out
 
 Also note that any protected page will be effectively blocked from search engines and will not get indexed.
 
+## Caching Issues
+
+Please note that we have not yet resolved all [caching issues](https://github.com/tenseg/cascading-entry-protection/issues/1) with this addon. It is possible that when editing the restrictions, some cached instances of child entries will not be flushed and refreshed. For now, please be sure to manually flush caches when making changes to restrictions.
+
 ## License
 
 The code unique to this addon is licensed by Tenseg LLC under the MIT License. Please see the [License File](https://github.com/tenseg/cascading-entry-protection/blob/main/LICENSE) for information. Statamic itself is commercial software and has [its own license](https://statamic.com/license).
