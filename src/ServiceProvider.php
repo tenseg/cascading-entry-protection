@@ -52,13 +52,15 @@ class ServiceProvider extends AddonServiceProvider
                         return $value;
                     }
                     $parent = $entry;
+                    $mount_found = false;
                     while ( $parent ) {
                         if ( $tickets = $parent->cascading_protection_tickets ) {
                             return $parent->cascading_protection_tickets;
                         }
                         $parent = $parent->parent;
-                        if ( !$parent ) {
+                        if ( !$parent && !$mount_found ) {
                             $parent = $entry->collection()->mount();
+                            $mount_found = true;
                         }
                     }
                     return null;
@@ -79,13 +81,15 @@ class ServiceProvider extends AddonServiceProvider
                         return "";
                     }
                     $parent = $entry;
+                    $mount_found = false;
                     while ( $parent ) {
                         if ( $tickets = $parent->cascading_protection_tickets ) {
                             return $parent->title . " provides " . Str::makeSentenceList($tickets) .  ".";
                         }
                         $parent = $parent->parent;
-                        if ( !$parent ) {
+                        if ( !$parent && !$mount_found ) {
                             $parent = $entry->collection()->mount();
+                            $mount_found = true;
                         }
                     }
                     return "Open access.";
@@ -105,13 +109,15 @@ class ServiceProvider extends AddonServiceProvider
                         return $value;
                     }
                     $parent = $entry;
+                    $mount_found = false;
                     while ( $parent ) {
                         if ( $parent->cascading_protection_tickets ) {
                             return 'cascading_entry_protector';
                         }
                         $parent = $parent->parent;
-                        if ( !$parent ) {
+                        if ( !$parent && !$mount_found ) {
                             $parent = $entry->collection()->mount();
+                            $mount_found = true;
                         }
                     }
                     return null;
